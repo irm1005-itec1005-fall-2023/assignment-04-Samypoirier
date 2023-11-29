@@ -81,19 +81,20 @@ ul li.checked{
 ul li.checked::before{
   background-image: url(images/unchecked.png);
 }
-ul li span{
+ul li button{
   position: absolute;
   right: 0;
-  top: 5px;
-  width: 40px;
-  height: 40px;
+  top: 14px;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
   font-size: 22px;
   color: #555;
-  line-height: 40px;
+  line-height: 1px;
   text-align: center;
   border-radius: 50%;
 }
-ul li span:hover{
+ul li button:hover{
 background: rgb(203, 209, 214);
 }
 @media screen and (max-width: 600px){

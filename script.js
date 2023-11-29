@@ -10,9 +10,9 @@ function addTask (){
     li.innerHTML = inputBox.value;
     MovieContainer.appendChild(li);
     
-    let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
-    li.appendChild(span);
+    let tempButton = document.createElement("button");
+    tempButton.textContent = "\u00d7";
+    li.appendChild(tempButton);
   }
   inputBox.value = "";
   saveData();
@@ -23,7 +23,7 @@ MovieContainer.addEventListener("click", function(e){
     e.target.classList.toggle("checked");
     saveData();
   }
-  else if(e.target.tagName === "SPAN"){
+  else if(e.target.tagName === "BUTTON"){
     e.target.parentElement.remove();
     saveData();
   }
