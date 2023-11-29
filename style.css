@@ -1,56 +1,106 @@
-/*
- * CSS File for the solution
- * Assignment 03
- * You can modify these styles but you don't have to
- */
-
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
-}
-
-main {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/****** Screen reader text utility clsas *******/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+*{
+  margin: 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  background-image: url(images/film-background-fwuwqptvgv1k0jco.jpg);
+  width: 100%;
+  min-height: 100vh;
+ padding: 10px;
+}
+.movie-list {
+  width: 100%;
+  max-width: 540px;
+  background: #edeef0;
+
+margin: 100px auto 20px;
+padding: 40px 30px 70px;
+border-radius: 10px;
+}
+.movie-list h2{
+  color: #000000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.movie-list h2 img{
+  width: 30px;
+  margin-left: 10px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content:space-between ;
+  background-color:#edeef0 ;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px
+}
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: black;
+  color: #edeef0;
+  cursor: pointer;
+  border-radius: 40px;
+}
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+ cursor: pointer; 
+ position: relative;
+}
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+ 
+  background-image: url(images/checked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url(images/unchecked.png);
+}
+ul li button{
+  position: absolute;
+  right: 0;
+  top: 14px;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  color: #555;
+  line-height: 1px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li button:hover{
+background: rgb(203, 209, 214);
+}
+@media screen and (max-width: 600px){
+  .container {width: 100%;
+  }
+  .row {
+    flex-direction: column;
+  }
 }
