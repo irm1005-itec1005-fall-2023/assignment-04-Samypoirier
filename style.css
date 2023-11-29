@@ -96,3 +96,10 @@ ul li span{
 ul li span:hover{
 background: rgb(203, 209, 214);
 }
+@media screen and (max-width: 600px){
+  .container {width: 100%;
+  }
+  .row {
+    flex-direction: column;
+  }
+}
